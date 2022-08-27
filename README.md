@@ -1,5 +1,7 @@
 # Elixir UUID
 
+[![CI](https://github.com/avenueplace/elixir-uuid/actions/workflows/ci.yml/badge.svg)](https://github.com/avenueplace/elixir-uuid/actions/workflows/ci.yml)
+
 > This project was forked from [zyro/elixir-uuid] and its maintenance is focused
 > on our internal usage at Avenue. Feel free to use it as is, and reach out to
 > us through an issue or pull-request. We'll gladly consider your suggestions
@@ -20,6 +22,18 @@ defp deps do
   ]
 end
 ```
+
+### Minimum requirements
+
+For development we choose not to consider any versions prior to Elixir 1.7, as
+required by `credo`, with OTP 20 since prior versions produce an error locating
+the `:ssl` application.
+
+It might be possible to use this project with prior Elixir versions and a
+compatible OTP version.
+
+This project is also tested against the latest 3 versions of Elixir and OTP.
+Elixir 1.11 is not considered in tests since it is not compatible with OTP 25.
 
 ## Usage
 

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: 1.13.x
+          otp-version: 25.x
+      - run: mix deps.get
+      - run: mix test
+
+  test-minimum:
+    name: Test - Elixir 1.7, OTP 20 (minimum)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: 1.7.x
+          otp-version: 20.x
+      - run: mix deps.get
+      - run: mix test
+
+  test-last-3:
+    name: Test - Elixir ${{ matrix.elixir }}, OTP ${{ matrix.otp }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        elixir: [1.12.x, 1.13.x]
+        otp: [23.x, 24.x, 25.x]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: ${{ matrix.elixir }}
+          otp-version: ${{ matrix.otp }}
+      - run: mix deps.get
+      - run: mix test
