@@ -1,11 +1,11 @@
 # Elixir UUID
 
-[![CI](https://github.com/avenueplace/elixir-uuid/actions/workflows/ci.yml/badge.svg)](https://github.com/avenueplace/elixir-uuid/actions/workflows/ci.yml)
+[![CI](https://github.com/frm/elixir-uuid/actions/workflows/ci.yml/badge.svg)](https://github.com/frm/elixir-uuid/actions/workflows/ci.yml)
 
 > This project was forked from [zyro/elixir-uuid] and its maintenance is focused
-> on our internal usage at Avenue. Feel free to use it as is, and reach out to
-> us through an issue or pull-request. We'll gladly consider your suggestions
-> and contributions.
+> focused on my personal and professional usage. Feel free to use it as is, and
+> reach out through an issue or pull-request. I'll gladly consider your
+> suggestions and contributions.
 
 UUID generator and utilities for [Elixir](http://elixir-lang.org/). See [RFC
 4122](http://www.ietf.org/rfc/rfc4122.txt).
@@ -18,14 +18,14 @@ Add as a dependency in your `mix.exs` file:
 ```elixir
 defp deps do
   [
-    { :elixir_uuid, github: "avenueplace/elixir-uuid", tag: "v1.2.2" }
+    { :elixir_uuid, github: "frm/elixir-uuid", tag: "v1.2.2" }
   ]
 end
 ```
 
 ### Minimum requirements
 
-For development we choose not to consider any versions prior to Elixir 1.7, as
+For development I choose not to consider any versions prior to Elixir 1.7, as
 required by `credo`, with OTP 20 since prior versions produce an error locating
 the `:ssl` application.
 
@@ -204,7 +204,7 @@ Some helper functions from [rjsamson/hexate].
 
 ## License
 
-Copyright 2022 Infinite Turtles, Lda
+Copyright 2023 Fernando Mendes
 
 Copyright 2014-2022 [Andrei Mihu]
 
